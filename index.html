@@ -1,9 +1,14 @@
 <html>
 <head>
-
-    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <meta charset="utf-8">
     <title>quiltystcloud.com</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 <style>
     body {
         background-color: lightpink;
@@ -16,9 +21,6 @@
         margin-left: auto;
         margin-right: auto;
         top: 50%;
-    }
-    .flipped {
-        transform: scaleX(-1);
     }
     .container {
         width: 90%;
@@ -34,13 +36,12 @@
         margin: 4vh auto;
     }
 
-    .header {
-        color: whitesmoke;
-        margin: 3vh auto 3vh auto;
-        font-size: 2.5vmax;
-        font-family: 'Garamond';
+    .footer, a {
+        bottom: 0;
+        color: white;
+        font-size: 20px;
+        /* text-decoration: none; */
     }
-
     .image {
         width:100%;
         display: block;
@@ -73,40 +74,44 @@
 </head>
 
 <body>
-<div class="container">
-    <!-- <div class='header'>WELCOME TO QUILTYTOWN!</div> -->
-    <div class="content">
-        <div class='image'><img src='quilty1.png'></div>
-        <div class='image'><img src='quilty1.png'></div>
-        <div class='image'><img src='quilty1.png'></div>
-        <div class='image'><img src='quilty1.png'></div>
-        <div class='image'><img src='quilty1.png'></div>
-        <div class='image'><img src='quilty1.png'></div>
-        <div class='image'><img src='quilty1.png'></div>
-        <div class='image'><img src='quilty1.png'></div>
-        <div class='image'><img src='quilty1.png'></div>
-        <div class='image'><img src='quilty1.png'></div>
-        <div class='image'><img src='quilty1.png'></div>
-        <div class='image'><img src='quilty1.png'></div>
-        <div class='image'><img src='quilty1.png'></div>
-        <div class='image'><img src='quilty1.png'></div>
-        <div class='image'><img src='quilty1.png'></div>
-        <div class='image'><img src='quilty1.png'></div>
-        <div class='image'><img src='quilty1.png'></div>
-        <div class='image'><img src='quilty1.png'></div>
-        <div class='image'><img src='quilty1.png'></div>
-        <div class='image'><img src='quilty1.png'></div>
-        <div class='image'><img src='quilty1.png'></div>
-        <div class='image'><img src='quilty1.png'></div>
-        <div class='image'><img src='quilty1.png'></div>
-        <div class='image'><img src='quilty1.png'></div>
-        <div class='image'><img src='quilty1.png'></div>
-        <div class='image'><img src='quilty1.png'></div>
-        <div class='image'><img src='quilty1.png'></div>
-    </div>
-    <!-- <div class='header'>THANKS FOR VISITING!</div> -->
+    <div class="container">
+        <div class="content">
+            <div class='image'><img src='quilty1.png'></div>
+            <div class='image'><img src='quilty1.png'></div>
+            <div class='image'><img src='quilty1.png'></div>
+            <div class='image'><img src='quilty1.png'></div>
+            <div class='image'><img src='quilty1.png'></div>
+            <div class='image'><img src='quilty1.png'></div>
+            <div class='image'><img src='quilty1.png'></div>
+            <div class='image'><img src='quilty1.png'></div>
+            <div class='image'><img src='quilty1.png'></div>
+            <div class='image'><img src='quilty1.png'></div>
+            <div class='image'><img src='quilty1.png'></div>
+            <div class='image'><img src='quilty1.png'></div>
+            <div class='image'><img src='quilty1.png'></div>
+            <div class='image'><img src='quilty1.png'></div>
+            <div class='image'><img src='quilty1.png'></div>
+            <div class='image'><img src='quilty1.png'></div>
+            <div class='image'><img src='quilty1.png'></div>
+            <div class='image'><img src='quilty1.png'></div>
+            <div class='image'><img src='quilty1.png'></div>
+            <div class='image'><img src='quilty1.png'></div>
+            <div class='image'><img src='quilty1.png'></div>
+            <div class='image'><img src='quilty1.png'></div>
+            <div class='image'><img src='quilty1.png'></div>
+            <div class='image'><img src='quilty1.png'></div>
+            <div class='image'><img src='quilty1.png'></div>
+            <div class='image'><img src='quilty1.png'></div>
+            <div class='image'><img src='quilty1.png'></div>
+        </div>
+        <div class='footer'>
+            📸 <a href='https://instagram.com/quiltystcloud'>quiltystcloud</a><br>
+            💻 <a href='https://talnoznisky.com'>tal noznisky</a> 
+
+        </div>
     </div>
 </body>
+
 <script>
 set_onclick = () => {
     const images = document.getElementsByClassName('image')
@@ -133,10 +138,5 @@ update_image = () => {
     rand === true ? event.target.style.animation = 'rotation-flipped 2s infinite linear'
     : event.target.style.animation = 'rotation 2s infinite linear'
 }
-
 </script>
-
-
-
-
 </html>
