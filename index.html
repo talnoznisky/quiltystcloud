@@ -1,7 +1,7 @@
 <html>
 <head>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
     <meta charset="utf-8">
     <title>quiltystcloud.com</title>
 <style>
@@ -15,8 +15,11 @@
         max-height: 100%;
         margin-left: auto;
         margin-right: auto;
+        top: 50%;
     }
-
+    .flipped {
+        transform: scaleX(-1);
+    }
     .container {
         width: 90%;
         height: 100%;
@@ -28,8 +31,7 @@
         width: 100%;
         display: grid;
         grid-template-columns: repeat(3, 33% [col-start]);
-        margin-left: auto;
-        margin-right: auto;
+        margin: 4vh auto;
     }
 
     .header {
@@ -43,53 +45,98 @@
         width:100%;
         display: block;
     }
+
     @keyframes rotation {
         0% {
             transform: rotate(-10deg);
-        }
+            }   
         50% {
             transform: rotate(10deg);
-        }
+            }
         100% {
             transform: rotate(-10deg);
+            }
         }
+
+    @keyframes rotation-flipped {
+        0% {
+            transform: rotate(-10deg) scaleX(-1);
+            }   
+        50% {
+            transform: rotate(10deg) scaleX(-1);
+            }
+        100% {
+            transform: rotate(-10deg) scaleX(-1);
+            }
         }
 </style>
 </head>
 
 <body>
 <div class="container">
-    <div class='header'>WELCOME TO QUILTYTOWN!</div>
+    <!-- <div class='header'>WELCOME TO QUILTYTOWN!</div> -->
     <div class="content">
-        <div class='image'><img src='quilty.png'></div>
-        <div class='image'><img src='quilty.png'></div>
-        <div class='image'><img src='quilty.png'></div>
-        <div class='image'><img src='quilty.png'></div>
-        <div class='image'><img src='quilty.png'></div>
-        <div class='image'><img src='quilty.png'></div>
-        <div class='image'><img src='quilty.png'></div>
-        <div class='image'><img src='quilty.png'></div>
-        <div class='image'><img src='quilty.png'></div>
-        <div class='image'><img src='quilty.png'></div>
-        <div class='image'><img src='quilty.png'></div>
-        <div class='image'><img src='quilty.png'></div>
-        <div class='image'><img src='quilty.png'></div>
-        <div class='image'><img src='quilty.png'></div>
-        <div class='image'><img src='quilty.png'></div>
-        <div class='image'><img src='quilty.png'></div>
-        <div class='image'><img src='quilty.png'></div>
-        <div class='image'><img src='quilty.png'></div>
-        <div class='image'><img src='quilty.png'></div>
-        <div class='image'><img src='quilty.png'></div>
-        <div class='image'><img src='quilty.png'></div>
-        <div class='image'><img src='quilty.png'></div>
-        <div class='image'><img src='quilty.png'></div>
-        <div class='image'><img src='quilty.png'></div>
-        <div class='image'><img src='quilty.png'></div>
-        <div class='image'><img src='quilty.png'></div>
-        <div class='image'><img src='quilty.png'></div>
+        <div class='image'><img src='quilty1.png'></div>
+        <div class='image'><img src='quilty1.png'></div>
+        <div class='image'><img src='quilty1.png'></div>
+        <div class='image'><img src='quilty1.png'></div>
+        <div class='image'><img src='quilty1.png'></div>
+        <div class='image'><img src='quilty1.png'></div>
+        <div class='image'><img src='quilty1.png'></div>
+        <div class='image'><img src='quilty1.png'></div>
+        <div class='image'><img src='quilty1.png'></div>
+        <div class='image'><img src='quilty1.png'></div>
+        <div class='image'><img src='quilty1.png'></div>
+        <div class='image'><img src='quilty1.png'></div>
+        <div class='image'><img src='quilty1.png'></div>
+        <div class='image'><img src='quilty1.png'></div>
+        <div class='image'><img src='quilty1.png'></div>
+        <div class='image'><img src='quilty1.png'></div>
+        <div class='image'><img src='quilty1.png'></div>
+        <div class='image'><img src='quilty1.png'></div>
+        <div class='image'><img src='quilty1.png'></div>
+        <div class='image'><img src='quilty1.png'></div>
+        <div class='image'><img src='quilty1.png'></div>
+        <div class='image'><img src='quilty1.png'></div>
+        <div class='image'><img src='quilty1.png'></div>
+        <div class='image'><img src='quilty1.png'></div>
+        <div class='image'><img src='quilty1.png'></div>
+        <div class='image'><img src='quilty1.png'></div>
+        <div class='image'><img src='quilty1.png'></div>
     </div>
-    <div class='header'>THANKS FOR VISITING!</div>
+    <!-- <div class='header'>THANKS FOR VISITING!</div> -->
     </div>
 </body>
+<script>
+set_onclick = () => {
+    const images = document.getElementsByClassName('image')
+    for (image of images){ image.setAttribute('onclick', 'update_image()') }
+    for (image of images){ image.setAttribute('style', 'tranform=rotateY(-180deg)') }
+}
+
+set_onclick()
+
+update_image = () => {
+    let new_image
+    
+    image = event.target.getAttribute('src') 
+    image_list = ['quilty1.png','quilty2.png','quilty3.png']
+    image_index = image_list.indexOf(image)
+    
+    if (image_index == image_list.length - 1) {new_image = image_list[0]}
+    else new_image = image_list[image_index + 1]
+    
+    event.target.setAttribute('src', new_image)
+    
+    let rand = Math.random() < 0.5
+
+    rand === true ? event.target.style.animation = 'rotation-flipped 2s infinite linear'
+    : event.target.style.animation = 'rotation 2s infinite linear'
+}
+
+</script>
+
+
+
+
 </html>
