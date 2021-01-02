@@ -43,7 +43,7 @@
         padding: 2vh 0px;
     }
 
-    .image, .penant {
+    .image, .pennant {
         width:100%;
         display: block;
     }
@@ -84,7 +84,7 @@
 <body>
     <div class="container">
         <div>
-            <img class='penant' src='welcometoquiltytown.png'> 
+            <img class='pennant' src='welcometoquiltytown.png'> 
         </div>
         <div class="content">
             <div class='image-div'><img class='image' src='quilty1.png'></div>
@@ -126,8 +126,10 @@
 <script>
 set_onclick = () => {
     const images = document.getElementsByClassName('image')
-    for (image of images){ image.setAttribute('onclick', 'update_image()') }
-    for (image of images){ image.setAttribute('style', 'tranform=rotateY(-180deg)') }
+    for (image of images){ 
+        image.setAttribute('onclick', 'update_image()');
+        image.setAttribute('style', 'tranform=rotateY(-180deg)');
+    }
 }
 
 set_onclick()
